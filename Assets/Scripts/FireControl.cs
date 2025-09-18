@@ -21,6 +21,33 @@ public class FireControl : MonoBehaviour
 
     // TODO create class MissileInput
 
+    public class MissileInput
+    {
+        public  List<Vector3> pos_aiming = new List<Vector3>(); // aiming
+        public List<Vector3> pos_firing = new List<Vector3>(); // firing
+
+        public static MissileInput ReadInput()
+        {
+            MissileInput input = new MissileInput();
+
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) // if true
+            {
+                Vector3 pos = Input.mousePosition;
+                Vector3 world_pos = Utility.ScreenToWorldPos(pos);
+
+                input.pos_aiming.Add(world_pos); // adding to vector
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                Vector3 pos = Input.mousePosition;
+                pos = Utility.ScreenToWorldPos(pos);
+            }
+
+            return input;
+        }
+    }
+
+
     private void Start()
     {
         m_targets = new List<GameObject>();
@@ -45,6 +72,18 @@ public class FireControl : MonoBehaviour
         if (false == m_isPaused)
         {
             // TODO Read the input
+            FireControl.MissileInput input = MissileInput.ReadInput(); // static belongs to class itself. call it w/o creating a new isntance
+
+            if (input.pos_aiming.Count > 0)
+            {
+                Debug.Log("Aiming towards: " + input.pos_aiming[0]);
+            }
+
+            if (input.pos_firing.Count > 0)
+            {
+                Debug.Log("Fired missele at: " + input.pos_firing[0]);
+            }
+
 
             // TODO Fire Missiles
 
