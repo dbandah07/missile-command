@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.LightTransport;
 using UnityEngine.SceneManagement;
 
 public class FireControl : MonoBehaviour
@@ -37,10 +39,12 @@ public class FireControl : MonoBehaviour
 
                 input.pos_aiming.Add(world_pos); // adding to vector
             }
-            else if (Input.GetMouseButtonUp(0))
+            
+            if (Input.GetMouseButtonUp(0))
             {
                 Vector3 pos = Input.mousePosition;
-                pos = Utility.ScreenToWorldPos(pos);
+                Vector3 world_pos = Utility.ScreenToWorldPos(pos);
+                input.pos_firing.Add(world_pos);
             }
 
             return input;
@@ -79,18 +83,42 @@ public class FireControl : MonoBehaviour
                 Debug.Log("Aiming towards: " + input.pos_aiming[0]);
             }
 
+
+            // TODO Fire Missiles
             if (input.pos_firing.Count > 0)
             {
+                for (int i = 0; i < input.pos_firing.Count; i++)
+                {
+
+                    FireMissile(input.pos_firing[i]); // pass each fire pos
+
+                }
                 Debug.Log("Fired missele at: " + input.pos_firing[0]);
             }
 
-
-            // TODO Fire Missiles
-
             // TODO Make enough target reticles
+            for (int i = m_targets.Count; i < input.pos_aiming.Count; i++)
+            {
+                GameObject cross = Instantiate(m_crossHair);
+                m_targets.Add(cross);
+            }
+
             // Delete any extra target reticles
+            if (m_targets.Count > input.pos_aiming.Count)
+            {
+                while (m_targets.Count > input.pos_aiming.Count)
+                {
+                    GameObject extra = m_targets[m_targets.Count - 1]; // get last one
+                    Destroy(extra); // remove from scene
+                    m_targets.RemoveAt(m_targets.Count - 1); // remove from list
+                }
+            }
 
             // TODO Update the position of all the target reticles
+            for (int i = 0; i < m_targets.Count; i++)
+            {
+                m_targets[i].transform.position = input.pos_aiming[i]; // update pos
+            }
         }
 
         // keys
