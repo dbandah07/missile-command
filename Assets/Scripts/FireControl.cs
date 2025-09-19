@@ -212,5 +212,22 @@ public class FireControl : MonoBehaviour
         }
 
         return input;
+
+        Touch[] touches = Input.touches;
+        for (int i = 0; i < touches.Length; i++)
+        {
+            if (touches[i].phase == TouchPhase.Ended) // fire command
+            {
+                // if touch.position is in aiming region 
+                // proccess the firing
+                Vector3 pos = touches[i].position;
+                Vector3 world_pos = Utility.ScreenToWorldPos(pos);
+            }
+            else if (touches[i].phase == TouchPhase.Moved || touches[i].phase == TouchPhase.Began)
+            {
+                // in aiming zone, process aiming command
+                // 
+            }
+        }
     }
 }
