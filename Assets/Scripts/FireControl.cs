@@ -226,7 +226,8 @@ public class FireControl : MonoBehaviour
             else if (touches[i].phase == TouchPhase.Moved || touches[i].phase == TouchPhase.Began)
             {
                 // in aiming zone, process aiming command
-                // 
+                Vector3 pos = touches[i].position;
+                Vector3 world_pos = Utility.ScreenToWorldPos(pos);
             }
         }
     }
