@@ -54,7 +54,7 @@ public class FireControl : MonoBehaviour
         if (false == m_isPaused)
         {
             // TODO Read the input
-            MissileInput input = ReadInput(); // static belongs to class itself. call it w/o creating a new isntance
+            MissileInput input = ReadInput(); 
 
             if (input.pos_aiming.Count > 0)
             {
