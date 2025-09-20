@@ -196,6 +196,29 @@ public class FireControl : MonoBehaviour
     {
         MissileInput input = new MissileInput();
 
+        if (Application.isMobilePlatform)
+        {
+            Touch[] touches = Input.touches;
+            for (int i = 0; i < touches.Length; i++)
+            {
+                if (touches[i].phase == TouchPhase.Ended) // fire command
+                {
+                    // if touch.position is in aiming region 
+                    // proccess the firing
+                    Vector3 pos = touches[i].position;
+                    Vector3 world_pos = Utility.ScreenToWorldPos(pos);
+                }
+                else if (touches[i].phase == TouchPhase.Moved || touches[i].phase == TouchPhase.Began)
+                {
+                    // in aiming zone, process aiming command
+                    Vector3 pos = touches[i].position;
+                    Vector3 world_pos = Utility.ScreenToWorldPos(pos);
+                }
+            }
+        }
+
+        // PC
+
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) // if true
         {
             Vector3 pos = Input.mousePosition;
@@ -212,23 +235,5 @@ public class FireControl : MonoBehaviour
         }
 
         return input;
-
-        Touch[] touches = Input.touches;
-        for (int i = 0; i < touches.Length; i++)
-        {
-            if (touches[i].phase == TouchPhase.Ended) // fire command
-            {
-                // if touch.position is in aiming region 
-                // proccess the firing
-                Vector3 pos = touches[i].position;
-                Vector3 world_pos = Utility.ScreenToWorldPos(pos);
-            }
-            else if (touches[i].phase == TouchPhase.Moved || touches[i].phase == TouchPhase.Began)
-            {
-                // in aiming zone, process aiming command
-                Vector3 pos = touches[i].position;
-                Vector3 world_pos = Utility.ScreenToWorldPos(pos);
-            }
-        }
     }
 }
