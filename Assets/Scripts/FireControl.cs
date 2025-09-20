@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
+// using TMPro.EditorUtilities; failing to build - errored at this
 using UnityEngine;
-using UnityEngine.LightTransport;
+// using UnityEngine.LightTransport; ^^
 using UnityEngine.SceneManagement;
 
 public class FireControl : MonoBehaviour
