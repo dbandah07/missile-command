@@ -207,6 +207,7 @@ public class FireControl : MonoBehaviour
                     // proccess the firing
                     Vector3 pos = touches[i].position;
                     Vector3 world_pos = Utility.ScreenToWorldPos(pos);
+                    input.pos_firing.Add(world_pos);
                 }
                 else if (touches[i].phase == TouchPhase.Moved || touches[i].phase == TouchPhase.Began)
                 {
