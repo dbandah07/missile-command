@@ -549,7 +549,7 @@ MonoBehaviour:
   m_crossHair: {fileID: 8850257731302960478, guid: 5ab4dcca2cd4b3e40b2c64b61f3e685b, type: 3}
   m_missile: {fileID: 785979969656427663, guid: 81f737f2197f2134da22ff71d324366a, type: 3}
   m_bomb: {fileID: 91336348189984194, guid: 1c65411593d2f234694cf10d27b4e299, type: 3}
-  m_city: {fileID: 7096417006640647976, guid: 419275fb34b901f4193e8e895fe57a59, type: 3}
+  m_city: {fileID: 1902771728594338495, guid: 419275fb34b901f4193e8e895fe57a59, type: 3}
   m_numCity: 3
   m_bombMinTime: 0.25
   m_bombMaxTime: 1
