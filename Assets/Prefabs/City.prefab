@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 16435042284469277}
   - component: {fileID: 2562527867484771120}
   - component: {fileID: 1697266491615882009}
+  - component: {fileID: 8857195600771186895}
   m_Layer: 0
   m_Name: City
   m_TagString: Untagged
@@ -103,3 +104,25 @@ MonoBehaviour:
   m_explosion: {fileID: 8528267157131849732, guid: aa3e965396f8c6e4a99a0f108a65c894, type: 3}
   m_explosionOffset: {x: 0, y: 0, z: 0}
   m_launchOffset: {x: 0, y: 0, z: 0}
+--- !u!95 &8857195600771186895
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902771728594338495}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f7d32f0f3bb0d841ad396ea65b37767, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
