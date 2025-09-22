@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8406ee34afa6c6f4092634b722f6e1d6
+guid: 823cb32a3c81cab448239f252c454497
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -109309058784774393
-    second: CityA 1_0
+      213: 5993818668736677175
+    second: CityA_Destroyed 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CityA 1_0
+      name: CityA_Destroyed 1_0
       rect:
         serializedVersion: 2
-        x: 480
+        x: 464
         y: 0
-        width: 1048
-        height: 1266
+        width: 1064
+        height: 844
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 707b66c7df7ab7ef0800000000000000
-      internalID: -109309058784774393
+      spriteID: 735872692525e2350800000000000000
+      internalID: 5993818668736677175
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e1dc2a32929b0454f9bf12f37f2a4ee1
+    spriteID: bd0d7bdd3f7e3f04fbe08e5534fa2210
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CityA 1_0: -109309058784774393
+      CityA_Destroyed 1_0: 5993818668736677175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
